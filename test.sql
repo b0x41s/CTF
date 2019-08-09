@@ -19,6 +19,11 @@
 -- Table structure for table `datetimetest`
 --
 
+CREATE USER 'vulnuser'@'localhost' IDENTIFIED BY 'dmLeSF4BSxmyjWzV';
+
+GRANT ALL PRIVILEGES ON test.* TO 'vulnuser'@'localhost';
+
+
 DROP TABLE IF EXISTS `datetimetest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
