@@ -19,6 +19,7 @@ $sql = 'SELECT * FROM users WHERE ' .
 
 $result = $link->query($sql);
 
+
 if (!$result) {
     header('HTTP/1.0 500 Internal Serever Error');
     echo 'Internal Serever Error: ';
@@ -28,6 +29,9 @@ if (!$result) {
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 	$rows[] = $row;
 }
+
+
+
 if (empty($rows)) {
     header('HTTP/1.0 404 Not Found');
     echo '<br><br><br><br><br><br><br><div align=center><h1>Permission denied!!</h1></div>';
@@ -42,12 +46,19 @@ if (empty($rows)) {
 </head>
 <body>
 <div align=center>
-<h1>Welcome</h1>
+<h1>Welcome
+<?php
+if (!empty($rows)) {
+    
+
+    echo htmlspecialchars($rows[0]['name'], ENT_QUOTES, 'UTF-8'); 
+}
+?>
+
+
+</h1>
 <h3>The flag is: I_like_sql_injection_alot </h3>
 </div>
-
-
-
 
 </form>
 </body>
