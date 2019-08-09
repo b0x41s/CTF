@@ -30,9 +30,9 @@ while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 }
 if (empty($rows)) {
     header('HTTP/1.0 404 Not Found');
-    echo 'Not Found: ';
+    echo '<br><br><br><br><br><br><br><div align=center><h1>Permission denied!!</h1></div>';
     exit;
-} else {
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
     "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
@@ -41,31 +41,14 @@ if (empty($rows)) {
 <title>SQL injection Demo</title>
 </head>
 <body>
-<h1>SQL injection Demo</h1>
-<?php
-foreach ($rows as $row) {
-?>
-<dt>
-<dl>name: <?php echo htmlspecialchars($row['name'], ENT_QUOTES, 'UTF-8'); ?></dl>
-<dd>class: <?php echo htmlspecialchars($row['class'], ENT_QUOTES, 'UTF-8'); ?></dd>
-</dt>
-<?php
-}
-}
-?>
-<ul>
-<li>sql: <?php echo htmlspecialchars($sql, ENT_QUOTES, 'UTF-8'); ?></li>
-<li>name: <?php echo htmlspecialchars($name, ENT_QUOTES, 'UTF-8'); ?></li>
-<li>pass: <?php echo htmlspecialchars($pass, ENT_QUOTES, 'UTF-8'); ?></li>
-</ul>
+<div align=center>
+<h1>Welcome</h1>
+<h3>The flag is: I_like_sql_injection_alot </h3>
+</div>
 
 
-<form action="./sql3.php" method="get">
-<p>
-<input type="text" name="name" />
-<input type="text" name="pass" />
-<input type="submit" />
-</p>
+
+
 </form>
 </body>
 </html>
