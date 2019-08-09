@@ -3,6 +3,7 @@ $message = !empty($_GET['message']) ? $_GET['message'] : '' ;
 ?>
 <?php
 echo '<?xml version="1.0" encoding="UTF-8"?>'
+header("X-XSS-Protection: 0");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
     "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
